@@ -27,40 +27,12 @@ class BaseTabBarViewController: UITabBarController {
         SettingsViewController()
     }()
     
-    // MARK: - Tabbar items
-    
-    enum PrefferedItems {
-        static var search: UITabBarItem = {
-            let item = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-            item.title = "search"
-            return item
-        }()
-        
-        static var list: UITabBarItem = {
-            let item = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
-            item.title = "list"
-            return item
-        }()
-        
-        static var featured: UITabBarItem = {
-            let item = UITabBarItem(tabBarSystemItem: .featured, tag: 2)
-            item.title = "features"
-            return item
-        }()
-        
-        static var settings: UITabBarItem = {
-            let item = UITabBarItem(tabBarSystemItem: .more, tag: 3)
-            item.title = "settings"
-            return item
-        }()
-    }
-    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAppearance()
-        setControllers()
+        setupItems()
     }
     
     // MARK: - Setups
@@ -68,17 +40,27 @@ class BaseTabBarViewController: UITabBarController {
     private func setupAppearance() {
         modalPresentationStyle = .fullScreen
         tabBar.backgroundColor = .clear
-        tabBar.unselectedItemTintColor = .black
-        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = Constants.Colors.background
+        tabBar.tintColor = Constants.Colors.accentColor
+        
+        tabBar.layer.cornerRadius = 25 // half of tabBar height
+        tabBar.layer.masksToBounds = true
+        tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,
+                                      .layerMinXMinYCorner,
+                                      .layerMaxXMaxYCorner,
+                                      .layerMinXMaxYCorner]
     }
     
-    private func setControllers() {
-        searchViewController.tabBarItem = PrefferedItems.search
-        listViewController.tabBarItem = PrefferedItems.list
-        scrollViewController.tabBarItem = PrefferedItems.featured
-        setttingsViewController.tabBarItem = PrefferedItems.settings
+    private func setupItems() {
+        searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        listViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
+        scrollViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 2)
+        setttingsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
         
-        self.setViewControllers([searchViewController, listViewController,
-                                 scrollViewController, setttingsViewController], animated: true)
+        setViewControllers([searchViewController,
+                            listViewController,
+                            scrollViewController,
+                            setttingsViewController],animated: true)
     }
 }
+

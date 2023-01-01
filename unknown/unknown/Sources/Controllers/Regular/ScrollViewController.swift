@@ -22,6 +22,10 @@ class ScrollViewController: UIViewController {
     
     // MARK: - Setup view
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func setupView() {
         view.backgroundColor = .black
     }

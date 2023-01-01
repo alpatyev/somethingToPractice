@@ -10,9 +10,10 @@ import UIKit
 enum Constants {
     enum Colors {
         static var background = UIColor.black
-        static var fillElements = UIColor.darkGray
+        static var fillElements = UIColor.lightGray
         static var borderColor = UIColor.lightGray.cgColor
         static var prefferedText = UIColor.white
+        static var accentColor = UIColor.purple
     }
     
     enum Fonts {
