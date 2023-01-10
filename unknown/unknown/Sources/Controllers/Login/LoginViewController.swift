@@ -50,6 +50,10 @@ class LoginViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -58,10 +62,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Setup view
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     func setupView() {
         view.backgroundColor = Constants.Colors.background

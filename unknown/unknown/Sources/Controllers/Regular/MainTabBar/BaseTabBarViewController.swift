@@ -15,6 +15,13 @@ final class BaseTabBarViewController: UITabBarController {
         SearchViewController()
     }()
     
+    private lazy var listNavigationController : UINavigationController = {
+        let controller = UINavigationController()
+        controller.viewControllers = [listViewController]
+        controller.navigationBar.isHidden = true
+        controller.title = "collection"
+        return controller
+    }()
     private lazy var listViewController: UIViewController =  {
         ListViewController()
     }()
@@ -28,6 +35,10 @@ final class BaseTabBarViewController: UITabBarController {
     }()
     
     // MARK: - Lifecycle
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,14 +64,16 @@ final class BaseTabBarViewController: UITabBarController {
     
     private func setupItems() {
         searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        listViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
+        listNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
         scrollViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 2)
         setttingsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
         
         setViewControllers([searchViewController,
-                            listViewController,
+                            listNavigationController,
                             scrollViewController,
                             setttingsViewController],animated: true)
     }
+    
+    
 }
 

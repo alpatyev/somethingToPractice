@@ -15,6 +15,9 @@
 		6463C953295B4AA900493E1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463C952295B4AA800493E1C /* Constants.swift */; };
 		6463C956295B4E6600493E1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6463C955295B4E6600493E1C /* SnapKit */; };
 		6463C958295B55A900493E1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463C957295B55A900493E1C /* Extensions.swift */; };
+		64E57CC6296DA75400F6910C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E57CC5296DA75400F6910C /* NavigationController.swift */; };
+		64E57CC8296DA7AF00F6910C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E57CC7296DA7AF00F6910C /* ViewController.swift */; };
+		64E57CCF296DAF4900F6910C /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E57CCE296DAF4900F6910C /* DefaultCell.swift */; };
 		64F76421295C6AFD00DFC8E6 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F76420295C6AFC00DFC8E6 /* BaseTabBarViewController.swift */; };
 		64F76423295C6E7500DFC8E6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F76422295C6E7400DFC8E6 /* ListViewController.swift */; };
 		64F76425295C6F3400DFC8E6 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F76424295C6F3400DFC8E6 /* ScrollViewController.swift */; };
@@ -32,6 +35,9 @@
 		6463C94E295B45F900493E1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6463C952295B4AA800493E1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6463C957295B55A900493E1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		64E57CC5296DA75400F6910C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		64E57CC7296DA7AF00F6910C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64E57CCE296DAF4900F6910C /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
 		64F76420295C6AFC00DFC8E6 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		64F76422295C6E7400DFC8E6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		64F76424295C6F3400DFC8E6 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +117,6 @@
 			children = (
 				6463C94B295B455A00493E1C /* Login */,
 				6463C94A295B450E00493E1C /* Regular */,
-				6463C94D295B457100493E1C /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,11 +140,7 @@
 		6463C94A295B450E00493E1C /* Regular */ = {
 			isa = PBXGroup;
 			children = (
-				64F76420295C6AFC00DFC8E6 /* BaseTabBarViewController.swift */,
-				64F7642A295C73FD00DFC8E6 /* SearchViewController.swift */,
-				64F76422295C6E7400DFC8E6 /* ListViewController.swift */,
-				64F76424295C6F3400DFC8E6 /* ScrollViewController.swift */,
-				64F76428295C6FC300DFC8E6 /* SettingsViewController.swift */,
+				64E57CCB296DAAF900F6910C /* MainTabBar */,
 			);
 			path = Regular;
 			sourceTree = "<group>";
@@ -155,6 +156,7 @@
 		6463C94D295B457100493E1C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				64F76428295C6FC300DFC8E6 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -165,6 +167,53 @@
 				6463C952295B4AA800493E1C /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		64E57CC4296DA73100F6910C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64E57CC5296DA75400F6910C /* NavigationController.swift */,
+				64E57CC7296DA7AF00F6910C /* ViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64E57CC9296DAA8B00F6910C /* MostViewed */ = {
+			isa = PBXGroup;
+			children = (
+				64F76422295C6E7400DFC8E6 /* ListViewController.swift */,
+				64E57CCE296DAF4900F6910C /* DefaultCell.swift */,
+			);
+			path = MostViewed;
+			sourceTree = "<group>";
+		};
+		64E57CCB296DAAF900F6910C /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				64F76420295C6AFC00DFC8E6 /* BaseTabBarViewController.swift */,
+				64E57CCC296DAB3B00F6910C /* Search */,
+				64E57CC9296DAA8B00F6910C /* MostViewed */,
+				64E57CCD296DABC200F6910C /* Featured */,
+				6463C94D295B457100493E1C /* Settings */,
+				64E57CC4296DA73100F6910C /* Extensions */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		64E57CCC296DAB3B00F6910C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				64F7642A295C73FD00DFC8E6 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		64E57CCD296DABC200F6910C /* Featured */ = {
+			isa = PBXGroup;
+			children = (
+				64F76424295C6F3400DFC8E6 /* ScrollViewController.swift */,
+			);
+			path = Featured;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,14 +292,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E57CC6296DA75400F6910C /* NavigationController.swift in Sources */,
 				64F7642B295C73FD00DFC8E6 /* SearchViewController.swift in Sources */,
 				6463C958295B55A900493E1C /* Extensions.swift in Sources */,
 				6463C94F295B45F900493E1C /* LoginViewController.swift in Sources */,
 				64F76429295C6FC300DFC8E6 /* SettingsViewController.swift in Sources */,
 				6463C930295B42D800493E1C /* AppDelegate.swift in Sources */,
+				64E57CC8296DA7AF00F6910C /* ViewController.swift in Sources */,
 				64F76425295C6F3400DFC8E6 /* ScrollViewController.swift in Sources */,
 				6463C932295B42D800493E1C /* SceneDelegate.swift in Sources */,
 				6463C953295B4AA900493E1C /* Constants.swift in Sources */,
+				64E57CCF296DAF4900F6910C /* DefaultCell.swift in Sources */,
 				64F76421295C6AFD00DFC8E6 /* BaseTabBarViewController.swift in Sources */,
 				64F76423295C6E7500DFC8E6 /* ListViewController.swift in Sources */,
 			);
