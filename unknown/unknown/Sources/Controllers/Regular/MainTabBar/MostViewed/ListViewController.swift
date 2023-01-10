@@ -10,7 +10,7 @@ import UIKit
 final class ListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - UI
-    
+        
     private lazy var list: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -48,7 +48,7 @@ final class ListViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private func setupLayout() {
         list.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.edges.equalTo(view).inset(10)
         }
     }
     
@@ -59,8 +59,13 @@ final class ListViewController: UIViewController, UICollectionViewDelegate, UICo
 // MARK: - Collection stubs
 
 extension ListViewController {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: list.frame.width / 2 - 5,
+               height: list.frame.height / 2 - 5)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        123
+        20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
