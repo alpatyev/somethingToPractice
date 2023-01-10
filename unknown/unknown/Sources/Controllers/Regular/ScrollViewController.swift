@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+final class ScrollViewController: UIViewController {
     
     // MARK: - UI
     

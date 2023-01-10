@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTabBarViewController: UITabBarController {
+final class BaseTabBarViewController: UITabBarController {
     
     // MARK: Controllers
     
